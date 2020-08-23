@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array Methods 2</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		//The sort() method sorts an array alphabetically:
+		var names = ["Ram", "Krishna", "Shiva", "Ganesh", "Muruga"];
+		document.write("Sorting the array elements in ascending order:" + names.sort() + "</br>");
+
+		//reverse() The reverse() method reverses the elements in an array.You can use it to sort an array in descending order. But it will sort the array alphabetically like sort() methodd. It just reverses the array.
+		document.write("Sorting the array elements in descending order:" + names.reverse() + "</br>");
+
+		/*Numeric Sort
+        By default, the sort() function sorts values as strings.
+        This works well for strings ("Apple" comes before "Banana").
+        However, if numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+        Because of this, the sort() method will produce incorrect result when sorting numbers.
+        You can fix this by providing a compare function:*/
+
+        /*When the sort() function compares two values, it sends the values to the compare function, and sorts the 
+        values according to the returned (negative, zero, positive) value.
+
+        If the result is negative a is sorted before b.
+        If the result is positive b is sorted before a.
+        If the result is 0 no changes are done with the sort order of the two values.
+        Example:
+        The compare function compares all the values in the array, two values at a time (a, b).
+        When comparing 40 and 100, the sort() method calls the compare function(40, 100).
+        The function calculates 40 - 100 (a - b), and since the result is negative (-60),  the sort function will 
+        sort 40 as a value lower than 100.*/
+
+        //Ascending sort
+        var numbers = [52,25,130,32,164];
+        document.write("Sorting alphabetically: "+ numbers.sort() + "</br>");
+        document.write("Ascending order: " + numbers.sort(function(a, b){return a - b}) + "</br>");
+        document.write("Descending order: " + numbers.sort(function(a, b){return b - a}) + "</br>");
+        document.write("Random sort: " + numbers.sort(function(a, b){return 0.5 - Math.random()}) + "</br>");
+
+        //there are no seperate method to find the highest and lowest values of an array. use the compare function and sort the array ascending or descending to find the lowest and highest number 
+
+        var numerics = [56,23,134,36,168];
+        numerics.sort(function(a, b){return a - b}); // returns the array in ascending order in which index [0] has lowest value and index [4] has highest number
+        document.write("The new array sorted in ascending order: " + numerics + "</br>")
+        document.write("The lowest number is: " + numerics[0] + "</br>");
+        document.write("The highest number is: " + numerics[4] + "</br>");
+
+
+
+
+
+        
+
+	</script>
+
+</body>
+</html>

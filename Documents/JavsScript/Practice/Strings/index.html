@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String Methods 1</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		var name = "Harish";
+		//length property returns the length of the string
+
+		var nameLength = name.length;
+		document.write("The length of the string 'name' is " + nameLength + "</br>");
+
+		//indexOf() method returns the index of (the position of) the first occurrence of a specified text in a string
+
+		var quote = "You own your own desitny";
+		var ownPosition = quote.indexOf("own");
+		document.write("The first position of the word 'own' is " +ownPosition + "</br>");
+
+		//The lastIndexOf() method returns the index of the last occurrence of a specified text in a string
+        var lastOwnPosition = quote.lastIndexOf("own");
+		document.write("The last position of the word 'own' is " +lastOwnPosition + "</br>");
+
+		//Both indexOf(), and lastIndexOf() return -1 if the text is not found.
+
+		var namePosition = quote.indexOf("harish");
+		var nameLastPosition = quote.lastIndexOf("harish");
+        document.write("The first and last positions of the word 'harish' in the string 'quote' are " + 
+        	            namePosition + " & " + nameLastPosition + "</br>");
+
+        //Both methods accept a second parameter as the starting position for the search. indexOf searches fowards from the start position whereas lastIndexOf searches backwards from the start position
+
+        var ownPositionForward = quote.indexOf("own", 4); //return 4
+        document.write("The position of the word 'own' in forward search is " +ownPositionForward + "</br>");
+
+        var ownPositionForward = quote.indexOf("own", 5); //return 13
+        document.write("The position of the word 'own' in forward search is " +ownPositionForward + "</br>");
+
+        var ownPositionBackward = quote.lastIndexOf("own", 8); //return 4
+        document.write("The position of the word 'own' in backward search is " +ownPositionBackward + "</br>");
+
+        var ownPositionBackward = quote.lastIndexOf("own", 14); //return 13
+        document.write("The position of the word 'own' in backward search is " +ownPositionBackward + "</br>");
+
+        //The search() method searches a string for a specified value and returns the position of the match
+
+        var searchOwn = quote.search("own");
+        document.write("The position of the word 'own' is " +searchOwn + "</br>");
+
+        /*
+        indexOf() and search() method are not equal 
+        The search() method cannot take a second start position argument.
+        The indexOf() method cannot take powerful search values (regular expressions).
+        */
+
+
+	</script>
+
+</body>
+</html>

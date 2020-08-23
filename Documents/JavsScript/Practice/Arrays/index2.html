@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Array Methods 2</title>
+</head>
+<body>
+      <button onclick="randomSort()"> Random Sort</button>
+
+  
+      <p> Sorting a array randomly using Fisher -Yates algorithm.</p>
+      <p>The loop should iterate the array from back to front bypassing index 0. </p> 
+      <p>The loop should run (array.length -1) times. </p>
+      <p>Each loop should generate a random number between 0 and i. </p>
+      <p>Each loop swap the index i value with index j value. </p>
+     
+
+
+      <p id = "a"></p>
+      <p id = "b"></p>
+
+      <script type="text/javascript">
+
+        //Fisher -Yates Shuffle => Randomly swaps the values of indeces
+
+        var alphabets = ["q","e","c",6,1,9];
+        var loopconcept = document.getElementById('a');
+        
+        function randomSort() {
+           for (var i = alphabets.length -1; i > 0; i--) //iterates the loop only 5 times for the array of 6 elements
+           {
+           loopconcept.innerHTML += "Affecting the index position"+i+"of the array";
+           loopconcept.innerHTML += "---Generate a random number between 0 and "+i; 
+           var j = Math.floor(Math.random() * i);
+           loopconcept.innerHTML += "---Generated: "+j;
+           loopconcept.innerHTML += "---Swap values between " +i+" and " +j + "</br>";
+           var k = alphabets[i];
+           alphabets[i] = alphabets[j];
+           alphabets[j] = k;
+           }
+           document.getElementById('b').innerHTML = alphabets;
+        }
+        
+        
+              
+
+
+      </script>
+
+</body>
+</html>

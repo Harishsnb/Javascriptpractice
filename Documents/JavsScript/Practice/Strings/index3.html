@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String Methods 3</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+  //The replace() method replaces a specified value with another value in a string:
+
+  var personChracter = "Harish is a dilgent IT Professional. Harish is studying MInfoTech";
+  document.write(personChracter + "</br>");
+  /*var replaceSubject = personChracter.replace("Harish",'He') // replaces firstMatch
+  document.write(replaceSubject + "</br>");*/
+  var replaceSubject = personChracter.replace(/Harish/g,'He') // replaces all match g- globally regular expression are written witout quotes
+  document.write(replaceSubject + "</br>");
+  replaceSubject = replaceSubject.replace('He','Harish'); 
+  document.write(replaceSubject + "</br>");
+  
+  // toUpperCase and toLowerCase
+  var name = "SRIRAM"
+  var newName = name.toLowerCase();
+  document.write(newName + "</br>");  //sriram
+  document.write(name + "</br>"); //SRIRAM because the name is converted to lowercase and stored in newName variable
+
+  var city = "hamilton";
+  document.write(city.toUpperCase() + "</br>");
+
+  var firstName = "Harish";
+  var lastName = "Balachandar";
+  var fullName = firstName.concat(lastName); // return HarishBalachandar
+  fullName = firstName.concat(" ", lastName + "</br>"); // return Harish Balachandar
+  document.write(fullName);
+  fullName = firstName.concat(".", lastName + "</br>"); // return Harish.Balachandar
+  document.write(fullName);
+
+  //The trim() method removes whitespace from both sides of a string:
+
+/*  var greeting = "      Welcome  Harish   ";
+  var greeting2 = "Hello"
+  alert("Before trim" + greeting + greeting2); 
+  alert("After trim " + greeting.trim() + greeting2);*/
+
+	</script>
+
+</body>
+</html>
