@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Error handling</title>
+</head>
+<body>
+	<p>Please input a number between 5 and 10:</p>
+
+	<input id="demo" type="text">
+	<button type="button" onclick="myFunction()">Test Input</button>
+	<p id="p01"></p>
+
+	<input id="demo1" type="text">
+	<button type="button" onclick="myFunction1()">Test Input</button>
+	<p id="p1"></p>
+
+	<script type="text/javascript">
+
+   	/*The try statement lets you test a block of code for errors.
+
+    The catch statement lets you handle the error.
+
+    The throw statement lets you create custom errors.
+
+    The finally statement lets you execute code, after try and catch, regardless of the result.*/
+    
+    try {
+    	adddlert("Welcome Harish!");
+    }
+    catch(err) {
+    	document.write(err.message);
+    }
+
+    function myFunction() {
+    	var message, x;
+    	message = document.getElementById("p01");
+    	message.innerHTML = ""; //making it empty for every input 
+    	x = document.getElementById("demo").value;
+    	try {
+    		if(x == "") throw "empty";
+    		if(isNaN(x)) throw "not a number";
+    		x = Number(x); //type conversion because input is a string 
+    		if(x < 5) throw "too low";
+    		if(x > 10) throw "too high";
+    	}
+    	catch(err) {
+    		message.innerHTML = "Input is " + err;
+    	}
+    }
+
+    function myFunction1() {
+    	var message, x;
+    	message = document.getElementById("p1");
+    	message.innerHTML = ""; //making it empty for every input 
+    	x = document.getElementById("demo1").value;
+    	try {
+    		if(x == "") throw "empty";
+    		if(isNaN(x)) throw "not a number";
+    		x = Number(x); //type conversion because input is a string 
+    		if(x < 5) throw "too low";
+    		if(x > 10) throw "too high";
+    	}
+    	catch(err) {
+    		message.innerHTML = "Input is " + err;
+    	}
+    	finally {
+    		document.getElementById("demo1").value = ""; // making the input box empty after irrespective of the errors
+    	}
+    }
+
+
+   </script>
+
+</body>
+</html>
