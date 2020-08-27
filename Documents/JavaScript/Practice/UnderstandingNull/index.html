@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Null </title>
+</head>
+<body>
+
+    
+	<script type="text/javascript">
+		
+		
+		console.log("The 7 falsy values")
+        0 ? console.log("truthy") : console.log("falsy") // falsy
+        0n ? console.log("truthy") : console.log("falsy") // falsy
+		null ? console.log("truthy") : console.log("falsy") // falsy
+		undefined ? console.log("truthy") : console.log("falsy") // falsy
+		false ? console.log("truthy") : console.log("falsy") // falsy
+		NaN ? console.log("truthy") : console.log("falsy") // falsy
+		"" ? console.log("truthy") : console.log("falsy") // falsy
+
+		console.log("Comparing null with other falsy values")
+		console.log(null==0) // false
+		console.log(null==0n) // false
+		console.log(null==false) // false
+		console.log(null==NaN) // false
+		console.log(null=="") // false
+
+		console.log(null==null) // true
+		console.log(null==undefined) // true
+
+		console.log("Comparing null with other falsy values with strict comparison")
+		console.log(null===0) // false
+		console.log(null===0n) // false		
+		console.log(null===undefined) // false
+		console.log(null===false) // false
+		console.log(null===NaN) // false
+		console.log(null==="") // false
+
+		console.log(null===null) // true
+
+		// The value null is the only falsy value with the typeof "object":
+		console.log(typeof null === "object" && !null) // true
+		console.log(typeof {} === "object") // true
+		console.log(typeof {} === "object" && !{}) // false
+
+		// This can be used to create a simple isNull() function:
+		const isNull = (value) => typeof value === "object" && !value
+		console.log(isNull(null)) // true
+
+		// To also check for an undeclared value, which will have typeof undefined, tweak the comparison slightly:
+		console.log(typeof maybeUndeclared === "undefined" || (typeof maybeUndeclared === "object" && !maybeUndeclared))
+		const isNullOrUndeclared = (value) => typeof value === "undefined" || (typeof value === "object" && !value) 
+		//const isNullOrUndeclared(undeclaredVariable) // true
+
+		// Otherwise, referencing an undeclared variable will throw a ReferenceError:
+		try { undeclaredVariable == null } catch(e) 
+		{ console.log(e) } // ReferenceError: undeclaredVariable is not defined
+
+        
+        /*The he ES6 function Object.is() differs from the strict === and loose == equality operators in how it checks
+        for NaN and negative zero -0. For null, the behavior of Object.is() is the same as ===:*/
+		let maybeNull = null
+ 		// The following is equivalent to maybeNull == null or maybeNull == undefined:
+		console.log(Object.is(maybeNull,undefined) || Object.is(maybeNull,null)) // true
+		// Compare to the following:
+		console.log(maybeNull == null) // true
+		console.log(maybeNull == undefined) // true
+		console.log(maybeNull === null) // true
+		console.log(Object.is(maybeNull,null)) // true
+		console.log(maybeNull === undefined) // false
+		console.log(Object.is(maybeNull,undefined)) // false
+
+		maybeNull = undefined
+		console.log(maybeNull === undefined || maybeNull === null) // true
+		console.log(maybeNull == null) // true
+		console.log(maybeNull == undefined) // true
+		console.log(maybeNull === null) // false
+		console.log(Object.is(maybeNull,null)) // false
+		console.log(maybeNull === undefined) // true
+ 		console.log(Object.is(maybeNull,undefined)) // true
+
+		
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Form Validation </title>
+</head>
+<body>
+
+	<input id="id1" type="number" min="100" max="300" required>
+	<button onclick="handlecCheckValidity()">OK</button> <br>
+	<p id="demo"></p>
+	<button id = "b01" disabled>Submit</button> <br>
+	<p>If the number is less than 100 or greater than 300, an error message will be displayed.</p>
+
+	<script type="text/javascript">
+		
+		/*checkValidity()	Returns true if an input element contains valid data.
+        setCustomValidity()	Sets the validationMessage property of an input element.*/
+        function handlecCheckValidity() {
+        	var inpObj = document.getElementById("id1");
+        	var paraTagObj = document.getElementById("demo");
+        	var checkValidation = inpObj.checkValidity()?"Click on Submit":inpObj.validationMessage;
+        	paraTagObj.innerHTML = checkValidation;
+        	var butObj = document.getElementById("b01");
+        	butObj.disabled = true;
+        	if (inpObj.checkValidity()) {
+        		butObj.disabled = false;
+        	}
+
+        }
+
+
+
+	</script>
+
+</body>
+</html>

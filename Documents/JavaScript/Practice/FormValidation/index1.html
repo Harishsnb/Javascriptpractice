@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Form Validation </title>
+</head>
+<body>
+
+<p>Enter a number and click OK:</p>
+
+<input id="id1" type="number" max="100">
+<button onclick="handlerangeOverflow()">OK</button>
+<p id="demo"></p>
+<button id = "b01" disabled>Submit</button> <br>
+<p>If the number is greater than 100 (the input's max attribute), an error message will be displayed.</p>
+<script>
+function handlerangeOverflow() {
+  var inpObj = document.getElementById("id1");
+  var rangeValidation = (inpObj.validity.rangeOverflow)?"Value too large":"Click on Sumbmit"; 
+  document.getElementById("demo").innerHTML = rangeValidation;
+  var butObj = document.getElementById("b01");
+        	butObj.disabled = true;
+        	if (inpObj.checkValidity()) {
+        		butObj.disabled = false;
+        	}
+}
+</script>
+
+</body>
+</html>
