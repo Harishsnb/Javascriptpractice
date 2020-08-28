@@ -1,0 +1,14 @@
+Difference between function constructor and Object.create:
+Object.create builts an object that inherits directly from the one that we passed into the first 
+argument. On the other hand, in the function constructor the newly created object inherits from the constructor's prototype property.
+One of the biggest benifits of Object.create is that it allows us to implement the realy complex inheritance structures in an easier way compare to function constructors. Because it allows us to directly specify which object should be a prototype.
+
+Primitives Vs Objects
+Variables associated with primitives actually hold the data inside the variable itself. Whereas variables associated with objects donot actually contain the object instead they have the refrence to the memory in which object is stored. A variable declared as an object does not have the copy of the object but points to the object.
+
+Functions:
+A function is the instance of the object type.
+A function behaves like anyother object.
+We can store functions in a variable.
+We can pass a function as an argument to another function.
+We can return a function from function.
