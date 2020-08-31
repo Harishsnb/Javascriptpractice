@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Js Mistakes</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		var a = ''; // empty string this is not all 
+		console.log(a); //prints nothing in the console. ie,. an empty string is printed.
+		console.log(typeof(a)); //String
+		console.log(typeof(null)); //object
+
+		if (typeof a != "undefined"){
+			console.log("The value of a is defined"); //executed because condition is true
+		}
+		if(a == null){
+			console.log("The value of a is null"); //not executed because empty string is different from null 
+		} 
+		else {
+			console.log("The value of a is not null"); //executed because condition is false. 
+		}
+
+		var b = null;
+		console.log(b); // null 
+		console.log(typeof(b));//object
+
+		if (typeof b != "undefined"){
+			console.log("The value of b is defined"); //executed because condition is true
+		}
+		if(b == null){
+			console.log("The value of b is null"); // executed because condition is true. 
+		} 
+		else {
+			console.log("The value of b is not null"); //not executed because value of b is null . 
+		}
+
+        //incorrect  if (myObj !== null && typeof myObj !== "undefined") 
+        //Because of this, you must test for not undefined before you can test for not null:
+        //correct if (typeof myObj !== "undefined" && myObj !== null) 
+
+
+	</script>
+
+</body>
+</html>

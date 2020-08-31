@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Functions </title>
+</head>
+<body>
+    <script type="text/javascript">
+    	/*var numbers = [10,13,14,17,19,20];
+        document.write(oddEven(numbers));        
+
+        function oddEven(num) {
+
+        	var number = num;
+        	var result = [];
+
+        	for (var i = 0; i<number.length;i++){
+
+        		if (number[i]%2 == 0) { 
+        			result.push("even");
+        		}
+        			
+        		else { 
+        			result.push("odd");
+        	    }
+        	}
+        	return result;
+        }*/
+
+        //method 2 
+
+        var numbers1 = [10,13,14,17,19,20];
+        var result = oddEven1(numbers1);
+        function oddEven1(num) {
+
+        	var number = num;
+        	var result = [];
+
+        	for (var i = 0; i<number.length;i++){
+
+        		if (number[i]%2 == 0) { 
+        			result.push("is an even number");
+        		}
+        			
+        		else { 
+        			result.push("is an odd number");
+        	    }
+        	}
+        	return result;
+        }
+
+        /*for (var i = 0; i<numbers1.length; i++){
+
+        	for (var j = 0; j<result.length; j++){
+
+        		document.write(numbers1[i] + result[j] + "</br>");
+        	}
+        }*/
+        document.write(numbers1[0] +  ' ' + result[0] + "</br>");
+        document.write(numbers1[1] +  ' ' + result[1] + "</br>");
+        document.write(numbers1[2] +  ' ' + result[2] + "</br>");
+        document.write(numbers1[3] +  ' ' + result[3] + "</br>");
+        document.write(numbers1[4] +  ' ' + result[4] + "</br>");
+        document.write(numbers1[5] +  ' ' + result[5] + "</br>");
+
+        (function(){
+        var a = b = 3;  
+        })();
+
+        //a is undefined here. where as b is defined. 
+
+        console.log("a defined? " + (typeof a !== 'undefined')); // false because a is undefined
+        console.log("b defined? " + (typeof b !== 'undefined')); // true  because b is defined
+
+
+
+
+    </script>
+	
+
+</body>
+</html>

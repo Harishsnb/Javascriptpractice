@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Array Methods</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+		//below methods doesnot change the existing array. They return a new array. 
+
+		// The forEach() method calls a function (a callback function) once for each array element.
+		
+		var numbers = [28,67,123,70,56];
+		var listofNumbers1 = "";
+		var listofNumbers2 = "";
+		numbers.forEach(listFunction);
+		function listFunction(value) {
+            listofNumbers1 = listofNumbers1 + value; 
+			listofNumbers2 = listofNumbers2 + value + "</br>";
+			}
+        document.write("Without the usage of br : " + listofNumbers1 + "</br>" );
+        document.write("With the usage of br : " + "</br>" + listofNumbers2);
+
+        /*The map() method creates a new array by performing a function on each array element.
+        The map() method does not execute the function for array elements without values.
+        The map() method does not change the original array.*/
+
+        document.write("Squaring each element using map(): ")
+        numbers.map(mapFunction = (num) => document.write(num *2 + " "));
+
+        document.write("</br>" + "Finding whether a element is greater than 60 using map() : ")
+        // returns true or false for each element
+        numbers.map(mapFunction = (num) => document.write((num > 60) + " ")); 
+
+        var nameArray = [{firstName: "Harish", lastName: "Balachandar"}, 
+                     {firstName: "Sriram", lastName: "Jayraman"},
+                     {firstName: "Sanjaay", lastName: "Kishore"},
+                     {firstName: "Sakthi", lastName: "Ramasamy"}
+                    ];
+
+
+
+        /*The filter() method creates a new array with array elements that passes a test.
+        This example creates a new array from elements with a value larger than 18:*/
+        
+        document.write("</br>" + "Filtering each element using filter(): ")
+        //returns the elements that are greater than 60
+        var numbersOver60 = numbers.filter(filterFunction = (num) => num > 60);
+        document.write(numbersOver60 + "</br>" );
+
+        /*The reduce() method runs a function on each array element to produce (reduce it to) a single value.
+        The reduce() method works from left-to-right in the array. 
+        The reduce method takes two arguments*/
+
+        
+        var names = ["Harish","Balachandar"];
+        var x = "";
+        var fullName = names.reduce(reduceFunction = (x,name) => x + ' ' + name);
+        document.write("Using reduce() " + fullName + "</br>" ); //returns Harish Balchandar
+
+       /* The reduceRight() method runs a function on each array element to produce (reduce it to) a single value.
+        The reduceRight() works from right-to-left in the array.*/
+
+        fullName = names.reduceRight(reduceFunction = (x,name) => x + ' ' + name);
+        document.write("Using reduceRight() " + fullName + "</br>" ); // returns Balchandar Harish
+
+        /*The every() method check if all array values pass a test.This example check if all array values are larger than 60:*/
+
+        document.write("Finding all the elements are greater than 60 using every() : ")
+        // returns true or false for whole array
+        numbers.every(everyFunction = (num) => document.write((num > 60) + "</br>")); 
+
+         /*The some() method check if some array values pass a test.This example check if some array values are larger than 60:*/
+
+        document.write("Finding if some of the elements are greater than 60 using some() : ")
+        // returns true or false for some element
+        var someElements = numbers.some(everyFunction = (num) => num > 60); 
+        document.write(someElements + "</br>");
+        document.write("Finding if each of the elements are greater than 60 using some() : ")
+        // returns false true true true false
+        numbers.some(everyFunction = (num) => document.write((num > 60) + " "));  
+
+        /*The indexOf() method searches an array for an element value and returns its position.Array.indexOf() returns -1 if the item is not found.
+        Array.lastIndexOf() is the same as Array.indexOf(), but returns the position of the last occurrence of the specified element.*/
+        var mobiles = ["Oppo", "Vivo", "Oppo", "Apple"];
+        document.write("</br>" + "The first position of Oppo: " + mobiles.indexOf("Oppo") +"</br>");
+        document.write("The last position of Oppo: " + mobiles.lastIndexOf("Oppo") +"</br>");
+
+        /*The find() method returns the value of the first array element that passes a test function.
+        This example finds (returns the value of) the first element that is larger than 60:*/
+
+        document.write("Finding first array element that is greater than 60 using find() : ")
+        // returns false true true true false
+        var findNumbers = numbers.find(findingFunction = (num) => num > 60); 
+        document.write(findNumbers + "</br>"); 
+
+        /*The findIndex() method returns the index of the first array element that passes a test function.
+        This example finds (returns the value of) the first element that is larger than 60:*/
+
+        document.write("Finding first index of the element that is greater than 60 using findIndex() : ")
+        // returns false true true true false
+        var findNumberIndex = numbers.findIndex(findingFunction = (num) => num > 60); 
+        document.write(findNumberIndex + "</br>"); 
+
+
+
+
+
+
+
+
+
+       
+
+     </script>
+
+</body>
+</html>

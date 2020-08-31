@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String Methods 3</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+    //Extracting Charcters
+    // charAt(position) method returns the character at a specified index (position) in a string:
+
+    var name = "Krishna";
+    document.write("The character at position 4 is " + name.charAt(4) + "</br>"); //returns h 
+    //If no character is found, charAt() returns an empty string.
+    document.write("The character at position 10 is " + name.charAt(10) + "</br>"); //returns nothing 
+    //charCodeAt(position) method returns the unicode of the character at a specified index in a string:
+    document.write("The unicode of the character at position 4 is " + name.charCodeAt(4) + "</br>");
+    //Property access [ ] ECMAScript 5 (2009) allows property access [ ] on strings:
+    document.write("The property at the position 1 is " + name[1] + "</br>");
+   /* Property access might be a little unpredictable:
+    It does not work in Internet Explorer 7 or earlier
+    It makes strings look like arrays (but they are not)
+    If no character is found, [ ] returns undefined, while charAt() returns an empty string.
+    It is read only. name[0] = "K" gives no error (but does not work!)*/
+    
+
+	</script>
+
+</body>
+</html>

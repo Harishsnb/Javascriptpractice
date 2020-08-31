@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number Methods </title>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+     /*Primitive values (like 3.14 or 2014), cannot have properties and methods (because they are not objects).
+     But with JavaScript, methods and properties are also available to primitive values, because JavaScript treats 
+     primitive values as objects when executing methods and properties*/
+
+
+  /*   The toFixed() method converts a number into a string, rounding to a specified number of decimals.
+     Note: if the desired number of decimals are higher than the actual number, zeros are added to create the
+     desired decimal length.*/
+
+     var num = 6.7894457;
+     var n = num.toFixed(2);
+     document.write("Converting number to string and rounding the number with specified decimals: " + n + "</br>");
+     n = num.toFixed(10);
+     document.write("Converting number to string and rounding the number with specified decimals: " + n + "</br>");
+     n = num.toFixed(); //return 7 if greater that 6.5 or 6 if less than 6.5
+     document.write("Converting number to string and rounding the number without specified decimals: " + n + "</br>");
+
+     /*The toPrecision() method formats a number to a specified length.A decimal point and nulls are added (if needed,
+     to create the specified length.*/
+     var num1 = 16.2347;
+     var n1 = num1.toPrecision(2);
+     document.write("Converting number to string and with specified length: " + n1 + "</br>");
+     var n1 = num1.toPrecision(7); //add 0 if more places than given number 
+     document.write("Converting number to string and with specified length: " + n1 + "</br>");
+
+     /*Converting Strings to Numbers Strings containing numbers (like "3.14") convert to numbers (like 3.14).
+     Empty strings convert to 0.Anything else converts to NaN (Not a Number).*/
+
+     var a = Number("3.14")    // returns 3.14
+     var b = Number(" ")       // returns 0
+     var c = Number("")        // returns 0
+     var d = Number("99 88")   // returns NaN
+
+
+
+	</script>
+
+
+
+</body>
+</html>

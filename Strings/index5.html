@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String Methods 3</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+    //Coverting string to arrays
+    //split() method
+    var fruitName = "A,p,p,l,e";
+    var fruitNameArray = fruitName.split(',');
+    document.write(fruitNameArray + "</br>");
+    document.write(fruitNameArray[3] + "</br>");
+    var fruits = "Apple Mango Orange";
+    var fruitsArray = fruits.split(' ');
+    document.write(fruitsArray + "</br>");
+    var veges = "Carrot Potatoes Betroot";
+    var vegesArray = veges.split('');
+    //If the separator is "" or '' the returned array will be an array of single characters
+    document.write(vegesArray + "</br>"); // C,a,r,r,o,t, ,P,o,t,a,t,o,e,s, ,B,e,t,r,o,o,t
+    document.write("Returns whitespace which is in 6th position "+ vegesArray[6] + "</br>");
+    var vegesArray1= veges.split();
+    document.write("The split method without seperator returns the array as index[0] " + vegesArray1 + "</br>");
+ 
+	</script>
+
+</body>
+</html>

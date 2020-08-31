@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array Methods 1</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+
+    	//Arrays are mutable. The array methods changes the array. Unlike string it doesnot create a new array. 
+    	//Except concat() and slice() methods which return a new array.
+
+    	var indianCaptains = ["Dhoni", "Ganguly", "Kohli", "Kapil", "Azar"]; 
+    	var shortTimeCaptains = ["Sachin", "Dravid", "Kumble"]                                      
+	    document.write("The list of Indian cricket captains "+ indianCaptains + "</br>");
+	    
+	    //The join() method joins all array elements into a string.You can specify the separator
+	    var captainsString = indianCaptains.join(" ");
+	    document.write("The list of Indian cricket captains "+ captainsString + "</br>");
+
+	    //toString() converts an array to a string of (comma separated) array values. You cannot secify any sepearator
+
+	    captainsString = indianCaptains.toString();
+	    document.write("The list of Indian cricket captains "+ captainsString + "</br>");
+        
+        //The pop() method removes the last element from an array:The pop() method returns the removed elements
+
+        var popLastElement = indianCaptains.pop(); //Removes the last element ("Azar") from indianCaptains
+        document.write("Popping the last element from the array" + popLastElement + "</br>");
+        document.write("Array after popping " + indianCaptains + "</br>");
+
+        //The push() method adds a new element to an array (at the end). The push() method returns the new array length
+        var pushNewElement = indianCaptains.push("Azharuddinn"); // return new array length 5
+        document.write("Pushing a new element to an array " + pushNewElement + "</br>");
+        document.write("Array after pushing " + indianCaptains + "</br>");
+
+        /*Shifting is equivalent to popping, working on the first element instead of the last. The shift() method 
+        removes the first array element and "shifts" all other elements to a lower index.*/
+        var shiftDhoni = indianCaptains.shift();
+        document.write("Shifting the first element of an array: " + shiftDhoni + "</br>");
+        document.write("Array after shifting the element: " + indianCaptains + "</br>");
+
+        //The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:
+        var unshiftDhoni = indianCaptains.unshift("MS Dhoni");
+        document.write("Adding a new element using unshift: " + unshiftDhoni + "</br>");
+        document.write("Array after unshifting the element: " + indianCaptains + "</br>");
+        
+       /* Splicing an array
+        The first parameter (3) defines the position where new elements should be added (spliced in).
+        The second parameter (0) defines how many elements should be removed.
+        The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.
+        The splice() method returns an array with the deleted items:*/
+
+        var splicingCaptains = indianCaptains.splice(3,0,"Sachin", "Dravid", "Kumble");
+        document.write("Adding a new element using splice: " + splicingCaptains + "</br>"); //returns nonething because no other elements are removed
+        document.write("Array after splicing the element: " + indianCaptains + "</br>");
+
+        var splicingCaptains1 = indianCaptains.splice(3,3,"Raina", "Rahane", "Sehwag");
+        document.write("Adding a new element and removing using splice: " + splicingCaptains1 + "</br>");// returns the removed elements 
+        document.write("Array after splicing the element: " + indianCaptains + "</br>");
+       
+        //The concat() method does not change the existing arrays. It always returns a new array. 
+        var listOfIndianCaptains = indianCaptains.concat(shortTimeCaptains);
+        document.write("List of Indian captains: " + listOfIndianCaptains + "</br>");   
+
+        //The slice() method creates a new array. It does not remove any elements from the source array. 
+        var newList = indianCaptains.slice(3,6); // first parameter => start element. second paramter => upto (excluding)
+        document.write("Splicing list of Indian captains: " +newList + "</br>"); //returns new array with sliced elements
+        document.write("Parent array left unchanged by slice method: " +indianCaptains + "</br>");
+        
+        //If the end argument is omitted, like in the first examples, the slice() method slices out the rest of the array.
+        newList = indianCaptains.slice(3); 
+        document.write("Splicing list of Indian captains: " +newList + "</br>");
+
+
+
+
+
+
+
+
+    	
+
+    </script>
+	
+
+</body> 
+</html>

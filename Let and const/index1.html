@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>const keyword</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		/*Declaring a variable with const is similar to let when it comes to Block Scope.
+
+        The x declared in the block, in this example, is not the same as the x declared outside the block:*/
+
+        var x = 10;
+        document.write("The value of x outside the block: " + x + "</br>");
+        // Here x is 10
+       {
+	     const x = 2;
+	     document.write("The value of x inside the block declared using const keyword: " + x + "</br>");
+         // Here x is 2
+       }
+       document.write("The value of x outside the block does not changes: " + x + "</br>"); // Here x is 10
+       
+       //JavaScript const variables must be assigned a value when they are declared
+
+       //Incorrect. Throws Uncaught SyntaxError: Missing initializer in const declaration
+	   /*const name; 
+       name = "Harish";*/
+
+       const name = "Harish";
+       try
+       {
+       	name = "Ram";  //throws TypeError: Assignment to constant variable.
+       }
+       catch (error)
+       {
+       	document.write(error.name + " " + error.message + "</br>");
+       }
+
+       const age = 22;
+       document.write("The value of age: " + age + "</br>");
+       //const varibale can be changed within a block. But cannot be changed outside the block. Similar to let. 
+       {
+       	const age = 25;
+       	document.write("The value of age inside the block : " + age + "</br>");
+       } 
+       document.write("The value of age: " + age + "</br>");
+
+       /*The keyword const is a little misleading.It does NOT define a constant value. It defines a constant reference to a value.Because of this, we cannot change constant primitive values, but we can change the properties of constant objects and arrays .*/
+
+       const nameArray = ["Hari", "Joe", "Ram", "John"];
+       nameArray.splice(2,2,"Kris","Jack");
+       document.write("Changing the properties of constant arrays: "  + nameArray + "<br>");
+       document.write("Trying to redeclare the const array:" + " ");
+       try {
+       	nameArray = ["Hari", "Joe", "Kris", "Jack"]; //throws TypeError: Assignment to constant variable.
+       }
+       catch (error)
+       {
+       	document.write(error.name + " " + error.message + "</br>");
+       }
+
+       //similar to objects as well. The properties can be changed but the object cannot be redeclared. 
+
+       //Important notes
+    // varaible with const keyword can be redeclared only in another scope. They cannot be redeclred in the same scope. 
+    document.write("Redeclaring a JavaScript variable with var is allowed anywhere in a program" + "</br>");
+    document.write("Redeclaring or reassigning an existing var or let variable to const, in the same scope, or in the same block, is not allowed: "  + "</br>");
+    document.write("Redeclaring or reassigning an existing const variable, in the same scope, or in the same block, is not allowed:"  + "</br>");
+    document.write("Redeclaring a variable with const, in another scope, or in another block, is allowed:" + "</br>");
+
+    
+    //Variables defined with const are hoisted to the top of the block, but not initialized.The block of code is aware of the variable, but it cannot be used until it has been declared. Using a const variable before it is declared will result in a ReferenceError.
+
+    document.write("Variables defined with const are hoisted to the top and cannot be initialized at any time. not even assigned the value as undefined. Only throws SyntaxError." + "</br>");
+   /* try{ 
+       
+    	console.log(a); 
+    	importatnt note
+    	This is the Temporal Dead Zone where we’re trying to access a variable that has not yet been initialized (it has been declared and therefore exists, but has no value, not even undefined)
+    }
+    catch(error){
+    	document.write(error.name + " " + error.message + "</br>");
+    }
+
+    const a;*/
+    
+    
+
+
+
+
+
+
+       
+	   
+	</script>
+
+</body>
+</html>

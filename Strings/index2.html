@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String Methods 2</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+           var vegetables = " 'Carrots' 'Beans' 'Potatoes' ";
+           
+           // All string methods return a new string. They don't modify the original string. Formally said: Strings are immutable: Strings cannot be changed, only replaced.   
+
+           //Extracting string parts 
+
+           //slice(start, end) method extracts a part of a string and returns the extracted part in a new string.The method takes 2 parameters: the start position, and the end position (end not included).
+
+           //white space and quotes with in the string has an index position
+
+           var slicedVeges = vegetables.slice(2,9); //Carrots
+           document.write("The sliced vegetable is " + slicedVeges + "</br>");
+           slicedVeges = vegetables.slice(1,10); //'Carrots'
+           document.write("The sliced vegetable is " + slicedVeges + "</br>");
+           
+           //negative slicing works backwards staring from -1 and ends in -11 by excluding -12
+           var backwardSlice = vegetables.slice(-12,-1); // returns 'Potatoes' along with whitespace character in -1 position
+           document.write(" The sliced vegetable from backward is"+ backwardSlice + "</br>");
+
+           var backwardSlice = vegetables.slice(-1,-12); // returns nothing 
+           document.write(" The sliced vegetable from backward is "+ backwardSlice + "</br>");
+           
+           //If you omit the second parameter, the method will slice out the rest of the string
+
+           var entireSlice = vegetables.slice(-14); // returns s' 'Potatoes' along with whitespace character in -1 position and excluding -14 
+           document.write(" The sliced vegetable from backward is"+ entireSlice + "</br>");
+
+           var slicedFullVeges = vegetables.slice(10,); // returns  'Beans' 'Potatoes' along with whitespace character
+           document.write("The sliced vegetable is" + slicedFullVeges + "</br>");
+
+           //substring(start,end) is similar to slice().The difference is that substring() cannot accept negative indexes.If you omit the second parameter, substring() will slice out the rest of the string.
+
+           slicedVeges = vegetables.substring(2,9); //Carrots
+           document.write("The sliced substring in vegetable is " + slicedVeges + "</br>");
+
+           //substr(start,length) is similar to slice().The difference is that the second parameter specifies the length of the extracted part.
+           slicedVeges = vegetables.substr(2,10); //Carrots' ' //10 specifies the how many characters should be extracted.
+           document.write("The sliced substr in vegetable is " + slicedVeges + "</br>");
+           
+           //the difference between slice and substr in dealing with negative parameters is that the slice excludes the value of end index position whereas the substr includes the value of mentioned negative index because there is no start and end position in substr 
+           slicedVeges = vegetables.substr(-5); //starts from -1 and includes -5 returns oes'
+           document.write("The sliced substr in vegetable is " + slicedVeges + "</br>");
+
+           slicedVeges = vegetables.substr(-5,2); //returns oe that is -5 and -4 index values 
+           document.write("The sliced substr in vegetable is " + slicedVeges + "</br>");
+
+           slicedVeges = vegetables.substr(-5,10); //returns oes' if the length is more than the available position then substr returns the available position values
+           document.write("The sliced substr in vegetable is " + slicedVeges + "</br>");
+
+	</script>
+
+</body>
+</html>

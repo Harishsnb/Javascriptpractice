@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Numbers</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+    
+    //Integers (numbers without a period or exponent notation) are accurate up to 15 digits.
+    var x = 999999999999999;   // x will be 999999999999999
+    var y = 9999999999999999;  // y will be 10000000000000000
+    //The maximum number of decimals is 17, but floating point arithmetic is not always 100% accurate:
+    var p = 0.1 + 0.2 // returns 0.30000000000000004
+    document.write(p + "</br>"); 
+    //To solve the problem above, it helps to multiply and divide:
+    var a = ((0.1 *10) + (0.2*10))/10;
+    document.write(a + "</br>");
+
+    var b = 10;
+    var c = 20;
+    document.write("The value of addition is " + (b + c) + "</br>");//30
+    var z1 = b+c;
+    document.write("The value of addition is "+ z1 + "</br>"); //30
+
+    document.write("The value of addition is " + b + c + "</br>"); // 1020
+    var z = "The value of addition is " + b + c; //1020
+    document.write(z + "</br>");
+    
+    
+    //JavaScript will try to convert strings to numbers in all numeric operations execept addition
+
+    var x = "10", y = "5";
+    document.write(x + y + "</br>"); //105
+    document.write(x - y + "</br>"); //5
+    document.write(x * y + "</br>"); //50
+    document.write(x / y + "</br>"); //2
+    document.write(x % y + "</br>"); //0
+
+    //when you perform arithematic operation for String and number, only addition works.Rest all will return NaN
+    var name = "Hari", age = 20;
+    document.write(name + age + "</br>"); //Hari20
+    document.write(name - age + "</br>"); //NaN
+    document.write(name * age + "</br>"); //NaN
+    document.write(name / age + "</br>"); //NaN
+    document.write(name % age + "</br>"); //NaN
+
+    document.write(typeof NaN + "</br>"); //number
+
+    //Infinity (or -Infinity) is the value JavaScript will return if you calculate a number outside the largest possible number
+
+    document.write(typeof Infinity + "</br>" ); // returns "number"
+    document.write(10/0 + "</br>" ); //infinity 
+    document.write(-10/0 + "</br>" ); //-infinity 
+
+    var x = new Number(100);  //is a object type 
+
+
+
+	</script>
+
+
+
+</body>
+</html>

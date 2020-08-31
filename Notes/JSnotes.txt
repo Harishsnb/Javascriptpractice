@@ -1,0 +1,87 @@
+Global variables live until the page is discarded, like when you navigate to another page or close the window.
+
+Local variables have short lives. They are created when the function is invoked, and deleted when the function is finished.
+
+Local Vs global scope 
+A variable intiialised without declaration can be used outside the function as it has global scope
+Eg: myFunction();
+// code here can use carName as a global variable
+document.getElementById("demo").innerHTML = "I can display " + carName;
+function myFunction() {
+  carName = "Volvo";
+}
+Hoistnig - Declarations are hoisted not initialisations/expressions. Exception = let and const
+Hoisting is (to many developers) an unknown or overlooked behavior of JavaScript.
+If a developer doesn't understand hoisting, programs may contain bugs (errors).
+To avoid bugs, always declare all variables at the beginning of every scope.
+Since this is how JavaScript interprets the code, it is always a good rule.
+JavaScript in strict mode does not allow variables to be used if they are not declared.
+
+closures == the inner function has access to the outer function even after outer function is executed and returned the output. 
+
+The "use strict" Directive
+The "use strict" directive was new in ECMAScript version 5.
+It is not a statement, but a literal expression, ignored by earlier versions of JavaScript.
+The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
+With strict mode, you can not, for example, use undeclared variables.
+All modern browsers support "use strict" except Internet Explorer 9 and lower
+
+Declared "use strict" at the beginning of a script, it has global scope (all code in the script will execute in strict mode)
+Declared "use strict" inside a function, it has local scope (only the code inside the function is in strict mode)
+
+Why Strict Mode?
+Strict mode makes it easier to write "secure" JavaScript.
+
+Strict mode changes previously accepted "bad syntax" into real errors.
+
+As an example, in normal JavaScript, mistyping a variable name creates a new global variable. In strict mode, this will throw an error, making it impossible to accidentally create a global variable.
+
+In normal JavaScript, a developer will not receive any error feedback assigning values to non-writable properties.
+
+In strict mode, any assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object, will throw an error.
+
+The "use strict" directive is only recognized at the beginning of a script or a function.
+
+
+The JavaScript this keyword refers to the object it belongs to.
+
+It has different values depending on where it is used:
+
+In a method, this refers to the owner object.
+Alone, this refers to the global object.
+In a function, this refers to the global object.
+In a function, in strict mode, this is undefined.
+In an event, this refers to the element that received the event.
+Methods like call(), and apply() can refer this to any object.
+
+
+Temporal Dead Zone - where we’re trying to access a variable that has not yet been initialized (it has been declared and therefore exists, but has no value, not even undefined)
+
+
+Arrow functions:
+
+Arrow functions do not have their own this. They are not well suited for defining object methods.
+
+Arrow functions are not hoisted. They must be defined before they are used.
+
+Using const is safer than using var, because a function expression is always constant value.
+
+You can only omit the return keyword and the curly brackets if the function is a single statement. Because of this, it might be a good habit to always keep them
+
+Difference between call and apply:
+
+The call() method takes arguments separately.
+The apply() method takes arguments as an array.
+In JavaScript strict mode, if the first argument of the apply() method is not an object, it becomes the owner (object) of the invoked function. In "non-strict" mode, it becomes the global object.
+
+bind () returns a function. bind allows us explicitly to set the the this varabile. it also helps to predefine an argument. In genral, first argument is the this variable and followed by the arguments that is need to be predefined
+
+eg: let us consider the eligibility method in the object election has two arguments. One if for the age and other is for limit as shown bellow:
+
+var election = { eligibility: function (limit,age)}  
+ var eligibleToVote = election.eligibility.bind(this,18) // limit is predeined. 
+
+ The splice() method returns the removed item(s) in an array and slice() method returns the selected element(s) in an array, as a new array object. ... The splice() method changes the original array and slice() method doesn't change the original array. The splice method takes three arguments - index,howmany elements to be removed(optional), elements to be added(optional). The slice method takes two argumnents start index and end index(optional, excluded ) 
+
+ In the Apple macOS operating system, .DS_Store is a file that stores custom attributes of its containing folder, such as the position of icons or the choice of a background image. The name is an abbreviation of Desktop Services Store, reflecting its purpose. 
+

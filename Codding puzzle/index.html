@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coding fun</title>
+</head>
+<body>
+   
+   <script type="text/javascript">
+   	    (function(){
+   		   var a = b = 3;  
+   	    })();
+
+        //a is undefined here. where as b is defined. 
+
+        console.log("a defined? " + (typeof a !== 'undefined')); // false because a is undefined
+        console.log("b defined? " + (typeof b !== 'undefined')); // true  because b is defined
+
+        function foo1(){
+        	return {
+        		bar: "hello"
+        	};
+        }
+
+        function foo2(){
+
+        	return
+        	{
+        		bar: "hello"
+        	};
+        }
+        var a = foo1(); //returns object 
+        var b = foo2(); // returns nothing because return does not go to next line if there are no entries after return keyword 
+
+        console.log(a.bar); //hello
+        console.log(b); //undefined
+
+
+
+
+
+   </script>
+</body>
+</html>

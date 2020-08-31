@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bind()</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+		function Election (name,age) {
+			this.name = name;
+			this.age = age;
+		}
+		
+		function eligibility(personobj) {
+			const name = personobj.name;
+			const age = personobj.age;
+			const limit = eligibilityCheck.bind(this,18);
+			console.log(this);
+			
+			function eligibilityCheck(limit, age){
+
+				var isEligible = (age > limit)? `Yes, ${name} is eligible to vote.` : `No, ${name} is not eligible to vote`;
+				return isEligible;
+
+			};
+			return limit(age);
+
+		}
+		
+
+		var jackObj = new Election('Jack','25');
+		var ReenaObj = new Election('Reena','17');
+
+		console.log(`${eligibility(jackObj)}`);
+		console.log(`${eligibility(ReenaObj)}`);
+
+	</script>
+
+
+</body>
+</html>

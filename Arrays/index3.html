@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var mobiles = [{brand:"OnePlus", year:2014},{brand:"Apple", year:2007},
+                       {brand:"Samsung", year:2009}];
+        mobiles.sort(function(a, b){return a.year - b.year});
+        document.write("Sorting an array of objects based on the year of launching" + "</br>");
+        document.write(mobiles[0].brand + " " + mobiles[0].year +"</br>");
+        document.write(mobiles[1].brand + " " + mobiles[1].year +"</br>");
+        document.write(mobiles[2].brand + " " + mobiles[2].year +"</br>");
+
+        mobiles.sort(function(a, b){
+           var x = a.brand.toLowerCase();
+           var y = b.brand.toLowerCase();
+           if (x < y) {return -1;}
+           if (x > y) {return 1;}
+           return 0;
+        });
+
+        document.write("Sorting an array of objects based on the brand name alphabetically" + "</br>");
+        document.write(mobiles[0].brand + " " + mobiles[0].year +"</br>");
+        document.write(mobiles[1].brand + " " + mobiles[1].year +"</br>");
+        document.write(mobiles[2].brand + " " + mobiles[2].year +"</br>");
+	</script>
+
+</body>
+</html>
